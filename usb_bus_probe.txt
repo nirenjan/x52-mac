@@ -1,0 +1,115 @@
+Full Speed device @ 7 (0xFA130000): .............................................   Composite device: "Saitek X52 Pro Flight Control System"
+    Port Information:   0x001d
+           Captive
+           Internal Device
+           Connected
+           Enabled
+    Device Descriptor   
+        Descriptor Version Number:   0x0200
+        Device Class:   0   (Composite)
+        Device Subclass:   0
+        Device Protocol:   0
+        Device MaxPacketSize:   8
+        Device VendorID/ProductID:   0x06A3/0x0762   (Saitek PLC)
+        Device Version Number:   0x0030
+        Number of Configurations:   1
+        Manufacturer String:   1 "Saitek"
+        Product String:   2 "Saitek X52 Pro Flight Control System"
+        Serial Number String:   0 (none)
+    Configuration Descriptor   
+        Length (and contents):   34
+            Raw Descriptor (hex)    0000: 09 02 22 00 01 01 00 80  73 09 04 00 00 01 03 00  
+            Raw Descriptor (hex)    0010: 00 00 09 21 11 01 00 01  22 7D 00 07 05 81 03 10  
+            Raw Descriptor (hex)    0020: 00 0A 
+        Number of Interfaces:   1
+        Configuration Value:   1
+        Attributes:   0x80 (bus-powered)
+        MaxPower:   230 ma
+        Interface #0 - HID   
+            Alternate Setting   0
+            Number of Endpoints   1
+            Interface Class:   3   (HID)
+            Interface Subclass;   0
+            Interface Protocol:   0
+            HID Descriptor   
+                Descriptor Version Number:   0x0111
+                Country Code:   0
+                Descriptor Count:   1
+                Descriptor 1   
+                    Type:   0x22  (Report Descriptor)
+                    Length (and contents):   125
+                        Raw Descriptor (hex)    0000: 05 01 09 04 A1 01 09 01  A1 00 09 30 09 31 15 00  
+                        Raw Descriptor (hex)    0010: 26 FF 03 75 0A 95 02 81  02 75 02 95 01 81 01 09  
+                        Raw Descriptor (hex)    0020: 35 15 00 26 FF 03 75 0A  95 01 81 02 09 32 09 33  
+                        Raw Descriptor (hex)    0030: 09 34 09 36 15 00 26 FF  00 75 08 95 04 81 02 05  
+                        Raw Descriptor (hex)    0040: 09 19 01 29 27 15 00 25  01 95 27 75 01 81 02 75  
+                        Raw Descriptor (hex)    0050: 05 95 01 81 01 05 01 09  39 15 01 25 08 35 00 46  
+                        Raw Descriptor (hex)    0060: 3B 01 66 14 00 75 04 95  01 81 42 05 05 09 24 09  
+                        Raw Descriptor (hex)    0070: 26 15 00 25 0F 75 04 95  02 81 02 C0 C0 
+                    Parsed Report Descriptor:   
+                          Usage Page    (Generic Desktop) 
+                          Usage (Joystick)    
+                              Collection (Application)    
+                                Usage (Pointer)    
+                                    Collection (Physical)    
+                                      Usage (X)    
+                                      Usage (Y)    
+                                      Logical Minimum.........    (0)  
+                                      Logical Maximum.........    (1023)  
+                                      Report Size.............    (10)  
+                                      Report Count............    (2)  
+                                      Input...................   (Data, Variable, Absolute, No Wrap, Linear, Preferred State, No Null Position, Bitfield) 
+                                      Report Size.............    (2)  
+                                      Report Count............    (1)  
+                                      Input...................   (Constant, Array, Absolute) 
+                                      Usage (Rz)    
+                                      Logical Minimum.........    (0)  
+                                      Logical Maximum.........    (1023)  
+                                      Report Size.............    (10)  
+                                      Report Count............    (1)  
+                                      Input...................   (Data, Variable, Absolute, No Wrap, Linear, Preferred State, No Null Position, Bitfield) 
+                                      Usage (Z)    
+                                      Usage (Rx)    
+                                      Usage (Ry)    
+                                      Usage (Slider)    
+                                      Logical Minimum.........    (0)  
+                                      Logical Maximum.........    (255)  
+                                      Report Size.............    (8)  
+                                      Report Count............    (4)  
+                                      Input...................   (Data, Variable, Absolute, No Wrap, Linear, Preferred State, No Null Position, Bitfield) 
+                                      Usage Page    (Button) 
+                                      Usage Minimum...........    (1)  
+                                      Usage Maximum...........    (39)  
+                                      Logical Minimum.........    (0)  
+                                      Logical Maximum.........    (1)  
+                                      Report Count............    (39)  
+                                      Report Size.............    (1)  
+                                      Input...................   (Data, Variable, Absolute, No Wrap, Linear, Preferred State, No Null Position, Bitfield) 
+                                      Report Size.............    (5)  
+                                      Report Count............    (1)  
+                                      Input...................   (Constant, Array, Absolute) 
+                                      Usage Page    (Generic Desktop) 
+                                      Usage (Hat Switch)    
+                                      Logical Minimum.........    (1)  
+                                      Logical Maximum.........    (8)  
+                                      Physical Minimum........    (0)  
+                                      Physical Maximum........    (315)  
+                                      Unit....................    (20)  
+                                      Report Size.............    (4)  
+                                      Report Count............    (1)  
+                                      Input...................   (Data, Variable, Absolute, No Wrap, Linear, Preferred State, Null State, Bitfield) 
+                                      Usage Page    (Game Controls) 
+                                      Usage 36 (0x24)    
+                                      Usage 38 (0x26)    
+                                      Logical Minimum.........    (0)  
+                                      Logical Maximum.........    (15)  
+                                      Report Size.............    (4)  
+                                      Report Count............    (2)  
+                                      Input...................   (Data, Variable, Absolute, No Wrap, Linear, Preferred State, No Null Position, Bitfield) 
+                                    End Collection     
+                              End Collection     
+            Endpoint 0x81 - Interrupt Input   
+                Address:   0x81  (IN)
+                Attributes:   0x03  (Interrupt no synchronization data endpoint)
+                Max Packet Size:   16
+                Polling Interval:   10 ms
