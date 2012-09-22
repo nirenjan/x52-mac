@@ -25,10 +25,10 @@ Buttons
 * 12 - T3 Up
 * 13 - T3 Down
 * 14 - Trigger full
-* 15 - Mouse button
-* 16 - 
-* 17 - 
-* 18 - 
+* 15 - Mouse button - primary
+* 16 - Mouse wheel down
+* 17 - Mouse wheel up
+* 18 - Mouse button - secondary
 * 19 - Stick 4-way N
 * 20 - Stick 4-way E
 * 21 - Stick 4-way S
