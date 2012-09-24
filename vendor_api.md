@@ -41,11 +41,11 @@ The X52Pro has the following LEDs indexed as follows:
 To change the status of an LED, the index must be 0xb8, while
 the value must be as follows.
 
- 1         1
- 5 4 3 2 1 0 9 8 7 6 5 4 3 2 1 0
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-+ LED Num       |0|0|0|0|0|0|0|S|
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+     1         1
+     5 4 3 2 1 0 9 8 7 6 5 4 3 2 1 0
+    +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+    | LED Num       |0|0|0|0|0|0|0|S|
+    +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 
 LED Num - as per the index list above.
 S - 1 to turn on, 0 to turn off.
@@ -104,8 +104,63 @@ adjust the POV LED directly.
 Clock
 =====
 
-TBD
+The MFD has a clock display that supports displaying up to 3 timezones
+in both 12 and 24 hour formats. The base clock (clock 1) must be set
+using an absolute time in hours and minutes, while the secondary and
+tertiary clocks are programmed using offsets from the base clock. Also,
+the X52Pro does not have specific hardware to automatically update
+the time, so the host is responsible for updating the time values.
+
+To update the primary clock, use index 0xc0 and the value as follows.
+
+     1         1
+     5 4 3 2 1 0 9 8 7 6 5 4 3 2 1 0
+    +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+    |M|    Hour     |    Minute     |
+    +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+
+M - 1 for 24 hour format, 0 for 12 hour format
+Hour in 24 hour format - 0 to 23
+Minute from 0 to 59
+
+Updating the secondary and tertiary clocks use the same value as given
+below, but different indices, the secondary clock uses index 0xc1 while
+the tertiary clock uses index 0xc2.
+
+     1         1
+     5 4 3 2 1 0 9 8 7 6 5 4 3 2 1 0
+    +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+    |M|0|0|0|0|I|      Offset       |
+    +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+
+M - 1 for 24 hour format, 0 for 12 hour format
+I - 1 if negative offset from primary clock, 0 if positive offset
+Offset in minutes from base clock.
+
+Note that if you give hour and minute values outside their respective
+ranges, they will be stored as is, but for display purposes will be
+displayed as HH (mod 24) and MM (mod 60). So, if you program a primary
+clock of 12:61, and a secondary offset of -2, the primary clock will
+display 12:01, but the secondary clock will display 12:59. Also, the
+modulus operation is not a true modulus, but varies. Description of
+the operation is outside the scope of this document.
 
 Date
 ====
-TBD
+
+The MFD can also display a single date. Although the display treats
+the values in the control messages in DD.MM.YY format, tweaking the
+control messages can give you other formats. However, note that the
+display itself limits the values that can be shown. DD & MM can
+display values from 0 to 39, while YY can display values from 0 to
+63.
+
+To update date and month, use the index 0xc4 with the value as follows.
+
+     1         1
+     5 4 3 2 1 0 9 8 7 6 5 4 3 2 1 0
+    +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+    |    Month      |     Date      |
+    +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+
+To update year, use the index 0xc8 with the year as the value.
